@@ -56,8 +56,10 @@ public:
 
     int hashKey3(string key);
 
-    vector<vector<int>> returnData() const;
+    vector<int> returnData();
 
+protected:
+    int findLength(TableNode currentNode);
 };
 
 #endif //ASSIGNMENT_3_HASHTABLE_H

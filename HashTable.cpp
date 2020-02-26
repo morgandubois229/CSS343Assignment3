@@ -45,8 +45,32 @@ int HashTable::hashKey3(string key){
     return 0;
 }
 
-vector<vector<int>> HashTable::returnData() const{
-    vector<vector<int>> returnArray;
-
+vector<int> HashTable::returnData(){
+    int length = 0;
+    vector<int> returnArray;
+    returnArray.resize(46334);
+    for (int i = 0; i < 4177; i++) {
+        if (table[i] == nullptr){
+            length = 0;
+            returnArray[length] += 1;
+        } else {
+            length = findLength(*table[i]);
+            returnArray[length] += 1;
+        }
+    }
+    for (int j = 46334; j >= 0; j--){
+        if (returnArray[j] != 0){
+            returnArray.resize(j+1);
+            return returnArray;
+        }
+    }
     return returnArray;
+}
+
+int HashTable::findLength(TableNode currentNode){
+    if (currentNode.next == nullptr) {
+        return 1;
+    } else{
+        return 1 + findLength(*currentNode.next);
+    }
 }

@@ -24,7 +24,7 @@ public:
 
     virtual int hashKey3(string key) = 0;
 
-    virtual vector<vector<int>> returnData() const = 0;
+    virtual vector<int> returnData() = 0;
 
 };
 
