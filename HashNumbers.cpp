@@ -6,7 +6,7 @@
 vector<string> parseWords(string line);
 void addToHashTable(string key, string data, HashTable& theTable);
 
-int** readWords(char **argv) {
+vector<vector<int>> readWords(char **argv) {
     HashTable theTable;
     string line = "";
     vector<string> keyAndData;
@@ -48,12 +48,12 @@ void addToHashTable(string key, string data, HashTable& theTable) {
     theTable.add(hashedKey, key, data);
 }
 
-void printData(int** data) {
+void printData(vector<vector<int>> data) {
     cout << "I got here!" << endl;
 }
 
 int main(int argc, char **argv) {
-    int** data = readWords(argv);
+    vector<vector<int>> data = readWords(argv);
     printData(data);
     return 0;
 }

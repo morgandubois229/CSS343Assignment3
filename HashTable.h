@@ -56,10 +56,7 @@ public:
 
     int hashKey3(string key);
 
-    int** returnData();
-
-protected:
-    bool addHelper(int hashedKey, TableNode node);
+    vector<vector<int>> returnData() const;
 
 };
 

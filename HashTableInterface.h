@@ -6,6 +6,7 @@
 #define ASSIGNMENT_3_HASHTABLEINTERFACE_H
 
 #include <string>
+#include <vector>
 
 using namespace std;
 
@@ -23,7 +24,7 @@ public:
 
     virtual int hashKey3(string key) = 0;
 
-    virtual int** returnData() = 0;
+    virtual vector<vector<int>> returnData() const = 0;
 
 };
 

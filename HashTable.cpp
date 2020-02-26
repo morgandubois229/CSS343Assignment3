@@ -45,10 +45,8 @@ int HashTable::hashKey3(string key){
     return 0;
 }
 
-int** HashTable::returnData(){
+vector<vector<int>> HashTable::returnData() const{
+    vector<vector<int>> returnArray;
 
-}
-
-bool HashTable::addHelper(int hashedKey, TableNode node){
-
+    return returnArray;
 }
