@@ -43,7 +43,7 @@ vector<string> parseWords(string line) {
 }
 
 void addToHashTable(string key, string data, HashTable& theTable) {
-    int hashedKey = -1;
+    int hashedKey = 0;
     hashedKey = theTable.hashKey1(key);
     theTable.add(hashedKey, key, data);
 }
