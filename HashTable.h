@@ -54,7 +54,7 @@ public:
 
     int hashKey2(string key, string data);
 
-    int hashKey3(string data);
+    int hashKey3(string key, string data);
 
     vector<int> returnData();
 

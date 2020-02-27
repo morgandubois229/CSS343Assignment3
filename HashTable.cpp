@@ -52,14 +52,19 @@ int HashTable::hashKey2(string key, string data){
     return preHash % 4177;
 }
 //Hash that uses the numbers
-int HashTable::hashKey3(string data){
+int HashTable::hashKey3(string key, string data){
     string numbers = "";
     int preHash = 0;
-    for (int i = 0; i < data.size(); i++){
-        if (!(data[i] == '(' || data[i] == ')' || data[i] == '-' || data[i] == ' ')){
+    int tempNum = key[0];
+    preHash = tempNum * 10000;
+    for (int i = 10; i < data.size(); i++){
             numbers.push_back(data[i]);
-        }
     }
+    preHash += stoi(numbers);
+    while (preHash > 4177) {
+        preHash = preHash / 2;
+    }
+    return preHash;
 }
 
 vector<int> HashTable::returnData(){

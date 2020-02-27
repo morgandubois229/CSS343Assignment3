@@ -46,7 +46,7 @@ void addToHashTable(string key, string data, HashTable& theTable) {
     int hashedKey = 0;
     //hashedKey = theTable.hashKey1(key); //change for each hash function.
     //hashedKey = theTable.hashKey2(key, data);
-    hashedKey = theTable.hashKey3(data);
+    hashedKey = theTable.hashKey3(key, data);
     theTable.add(hashedKey, key, data);
 }
 
