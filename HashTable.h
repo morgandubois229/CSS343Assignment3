@@ -52,9 +52,9 @@ public:
 
     int hashKey1(string key);
 
-    int hashKey2(string key);
+    int hashKey2(string key, string data);
 
-    int hashKey3(string key);
+    int hashKey3(string data);
 
     vector<int> returnData();
 

@@ -20,9 +20,9 @@ public:
 
     virtual int hashKey1(string key) = 0;
 
-    virtual int hashKey2(string key) = 0;
+    virtual int hashKey2(string key, string data) = 0;
 
-    virtual int hashKey3(string key) = 0;
+    virtual int hashKey3(string data) = 0;
 
     virtual vector<int> returnData() = 0;
 

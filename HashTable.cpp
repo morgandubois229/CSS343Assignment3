@@ -32,17 +32,34 @@ bool HashTable::add(int hashedKey, string key, string data){
         return true;
     }
 }
-
+//Simple hash. Uses the names of the people.
 int HashTable::hashKey1(string key){
-    return 0;
+    int preHash = 0;
+    for (int i = 0; i < key.size(); i++) {
+        preHash += key[i];
+    }
+    return preHash % 4177;
 }
-
-int HashTable::hashKey2(string key){
-    return 0;
+//Hash that uses both the names and the numbers
+int HashTable::hashKey2(string key, string data){
+    int preHash = 0;
+    for (int i = 0; i < key.size(); i++) {
+        preHash += key[i];
+    }
+    for (int i = 0; i < data.size(); i++){
+        preHash += data[i];
+    }
+    return preHash % 4177;
 }
-
-int HashTable::hashKey3(string key){
-    return 0;
+//Hash that uses the numbers
+int HashTable::hashKey3(string data){
+    string numbers = "";
+    int preHash = 0;
+    for (int i = 0; i < data.size(); i++){
+        if (!(data[i] == '(' || data[i] == ')' || data[i] == '-' || data[i] == ' ')){
+            numbers.push_back(data[i]);
+        }
+    }
 }
 
 vector<int> HashTable::returnData(){

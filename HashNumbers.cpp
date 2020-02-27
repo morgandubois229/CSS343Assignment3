@@ -44,16 +44,27 @@ vector<string> parseWords(string line) {
 
 void addToHashTable(string key, string data, HashTable& theTable) {
     int hashedKey = 0;
-    hashedKey = theTable.hashKey1(key);
+    //hashedKey = theTable.hashKey1(key); //change for each hash function.
+    //hashedKey = theTable.hashKey2(key, data);
+    hashedKey = theTable.hashKey3(data);
     theTable.add(hashedKey, key, data);
 }
 
 void printData(vector<int> data) {
-    cout << "I got here!" << endl;
+    for(int i = 0; i < data.size(); i++) {
+        if (!(data[i] == 0)) {
+            cout << "Length " << i << " occurs " << data[i] << " times" << endl;
+        }
+    }
 }
 
 int main(int argc, char **argv) {
     vector<int> data = readWords(argv);
     printData(data);
+
+    //char aChar = 'a';
+    //int anInt = aChar;
+    //cout << anInt << endl;
+
     return 0;
 }
